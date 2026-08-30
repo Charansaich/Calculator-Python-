@@ -12,6 +12,123 @@
     <p>This is my first HTML webpage.</p>
 
     <button>Click Me</button>
+<<<<<<< HEAD
+=======
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin-top: 50px;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        button {
+            width: 60px;
+            height: 50px;
+            margin: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to My Calculator</h1>
+
+    <div class="calculator">
+
+        <input type="number" id="num1" placeholder="First number">
+
+        <input type="number" id="num2" placeholder="Second number">
+
+        <div>
+            <button onclick="calculate('+')">+</button>
+            <button onclick="calculate('-')">-</button>
+            <button onclick="calculate('*')">×</button>
+            <button onclick="calculate('/')">÷</button>
+        </div>
+
+        <button onclick="clearCalculator()">Clear</button>
+
+        <div class="result">
+            Result: <span id="result">0</span>
+        </div>
+
+    </div>
+
+    <script>
+        function calculate(operator) {
+
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            let result;
+
+            if (operator === "+") {
+                result = num1 + num2;
+            }
+            else if (operator === "-") {
+                result = num1 - num2;
+            }
+            else if (operator === "*") {
+                result = num1 * num2;
+            }
+            else if (operator === "/") {
+
+                if (num2 === 0) {
+                    result = "Cannot divide by zero";
+                } else {
+                    result = num1 / num2;
+                }
+            }
+
+            document.getElementById("result").textContent = result;
+        }
+
+        function clearCalculator() {
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("result").textContent = "0";
+        }
+    </script>
+
+</body>
+</html>
+>>>>>>> d58dc1d1a33b31f9d89098f0d9e47826fa5b895c
 
 </body>
 </html>
